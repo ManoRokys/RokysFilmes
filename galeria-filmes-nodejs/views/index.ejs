@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>RokyFilmes</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/images/logo.png" alt="RokyFilmes" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galeria de Filmes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cadastro">Cadastrar Filme</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Galeria -->
+    <div class="container mt-5" id="galeria">
+        <h2 class="text-center text-danger mb-4">Galeria de Filmes</h2>
+        <div class="row">
+            <% imagens.forEach(imagem => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card movie-card">
+                    <img src="/uploads/<%= imagem.file %>" alt="<%= imagem.titulo %>" class="card-img-top movie-image">
+                    <div class="card-body">
+                        <h5 class="movie-title"><%= imagem.titulo %></h5>
+                        <p class="movie-year">Ano: <%= imagem.ano %></p>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <!-- Cadastro -->
+    <div class="container mt-5" id="cadastro">
+        <h2 class="text-center text-danger mb-4">Cadastrar Filme</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/uploads" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Selecione a Capa:</label>
+                        <input type="file" name="file" class="form-control" id="file" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Título do Filme:</label>
+                        <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Digite o título" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ano" class="form-label">Ano de Lançamento:</label>
+                        <input type="number" name="ano" class="form-control" id="ano" placeholder="Digite o ano" required>
+                    </div>
+                    <input type="submit" value="Enviar Filme" class="btn btn-danger w-100">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

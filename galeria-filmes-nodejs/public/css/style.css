@@ -1,0 +1,70 @@
+body {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar-brand .logo {
+    height: 50px; 
+    width: 50px; 
+    transition: transform 0.3s ease; 
+}
+
+.navbar-brand .logo:hover {
+    transform: scale(1.1); 
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff4747;
+}
+
+.card {
+    background-color: #2c2c2c;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card {
+    background-color: #3d3d3d;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.movie-image {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.movie-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #ff4747;
+}
+
+.movie-year {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.card-footer {
+    background-color: #3d3d3d;
+    border-top: 2px solid #ff4747;
+}
+
+.btn-danger {
+    background-color: #ff4747;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #e63636;
+}
